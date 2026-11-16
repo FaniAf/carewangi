@@ -35,6 +35,49 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isCurrent) link.setAttribute('aria-current', 'page');
   });
 
+  const dropdownBtn = document.getElementById('navLayananBtn');
+  const dropdownItem = dropdownBtn ? dropdownBtn.closest('.nav-item-dropdown') : null;
+  if (dropdownBtn && currentPage === 'layanan') {
+    dropdownBtn.classList.add('active');
+    dropdownBtn.setAttribute('aria-current', 'page');
+  }
+
+  /* ------------------------------------------------------------------------
+     2B. DROPDOWN MENU INTERAKSI (KLIK / HOVER / TUTUP)
+     ------------------------------------------------------------------------ */
+  if (dropdownBtn && dropdownItem) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = dropdownItem.classList.contains('is-open');
+      dropdownItem.classList.toggle('is-open', !isOpen);
+      dropdownBtn.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!dropdownItem.contains(e.target)) {
+        dropdownItem.classList.remove('is-open');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dropdownItem.classList.contains('is-open')) {
+        dropdownItem.classList.remove('is-open');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+        dropdownBtn.focus();
+      }
+    });
+
+    const dropdownLinks = dropdownItem.querySelectorAll('a');
+    dropdownLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        dropdownItem.classList.remove('is-open');
+        dropdownBtn.setAttribute('aria-expanded', 'false');
+        if (menu && menu.classList.contains('open')) setMobileMenu(false);
+      });
+    });
+  }
+
   /* ------------------------------------------------------------------------
      3. MENU MOBILE
      ------------------------------------------------------------------------ */

@@ -36,7 +36,79 @@
       <nav class="nav-menu" id="menu" aria-label="Navigasi Utama">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Beranda</a></li>
-          <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-link nav-dropdown-btn" id="navLayananBtn" aria-expanded="false" aria-haspopup="true" aria-controls="dropdownLayanan">
+              <span>Layanan</span>
+              <svg class="dropdown-chevron" viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true">
+                <path d="M3.204 5h9.592L8 10.481 3.204 5z"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" id="dropdownLayanan" role="menu" aria-labelledby="navLayananBtn">
+              <div class="dropdown-header">
+                <span class="dropdown-kicker">Katalog Layanan Medis</span>
+                <a href="layanan.html" class="dropdown-view-all">Lihat Semua Layanan →</a>
+              </div>
+              <div class="dropdown-grid">
+                <div class="dropdown-col">
+                  <span class="dropdown-col-title">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Layanan Dokter
+                  </span>
+                  <ul class="dropdown-list">
+                    <li>
+                      <a href="layanan.html#dokter" class="dropdown-item">
+                        <span class="dropdown-item-title">Kunjungan Dokter Umum</span>
+                        <span class="dropdown-item-desc">Pemeriksaan fisik, tanda vital, dan evaluasi keluhan keluarga di rumah.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="layanan.html#dokter" class="dropdown-item">
+                        <span class="dropdown-item-title">Konsultasi Lansia & Tirah Baring</span>
+                        <span class="dropdown-item-desc">Penilaian kesehatan berkala bagi pasien dengan mobilitas terbatas.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="layanan.html#dokter" class="dropdown-item">
+                        <span class="dropdown-item-title">Evaluasi Pemulihan Pasca Rawat</span>
+                        <span class="dropdown-item-desc">Pemantauan perkembangan klinis lanjutan setelah rawat inap.</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="dropdown-col">
+                  <span class="dropdown-col-title">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Layanan Perawat
+                  </span>
+                  <ul class="dropdown-list">
+                    <li>
+                      <a href="layanan.html#perawat" class="dropdown-item">
+                        <span class="dropdown-item-title">Perawatan Luka & Pasca Bedah</span>
+                        <span class="dropdown-item-desc">Ganti perban steril, perawatan jahitan operasi, dan luka dekubitus.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="layanan.html#perawat" class="dropdown-item">
+                        <span class="dropdown-item-title">Pendampingan Perawat Medis</span>
+                        <span class="dropdown-item-desc">Pemeriksaan berkala gula darah, tensi, dan monitoring pasien.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="layanan.html#perawat" class="dropdown-item">
+                        <span class="dropdown-item-title">Edukasi Higiene & Perawatan Mandiri</span>
+                        <span class="dropdown-item-desc">Bimbingan praktis bagi anggota keluarga pendamping di rumah.</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown-footer">
+                <span class="dropdown-footer-text">Wilayah aktif: <strong>Kabupaten Banyuwangi</strong></span>
+                <a href="kontak.html" class="dropdown-footer-link">Konsultasi Sekarang →</a>
+              </div>
+            </div>
+          </li>
           <li><a href="cara-kerja.html" class="nav-link active" aria-current="page">Cara Kerja</a></li>
           <li><a href="tentang-kami.html" class="nav-link">Tentang Kami</a></li>
           <li><a href="kontak.html" class="nav-link">Kontak</a></li>
