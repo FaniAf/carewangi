@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pentingnya Catatan Tanda Vital Berkala bagi Penderita Hipertensi &amp; Diabetes — CareWangi</title>
+  <meta name="description" content="Ketahui pentingnya monitoring tensi darah dan gula darah berkala di rumah untuk mencegah risiko komplikasi stroke dan kardiovaskular akut.">
+  <meta name="theme-color" content="#0D529C">
+  <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="artikel">
+  <a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+  <header class="site-header" id="nav">
+    <div class="site-container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="CareWangi Beranda">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="6" fill="#0D529C"/>
+          <path d="M16 8v16M8 16h16" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="23" cy="9" r="2.5" fill="#C9872E"/>
+        </svg>
+        <span class="brand-name">Care<span>Wangi</span></span>
+      </a>
+
+      <button class="menu-toggle" id="burger" aria-label="Buka navigasi menu" aria-expanded="false" aria-controls="menu">
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+        <span class="toggle-bar"></span>
+      </button>
+
+      <nav class="nav-menu" id="menu" aria-label="Navigasi Utama">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li class="nav-item-dropdown">
+            <button type="button" class="nav-link nav-dropdown-btn" id="navLayananBtn" aria-expanded="false" aria-haspopup="true" aria-controls="dropdownLayanan">
+              <span>Layanan</span>
+              <svg class="dropdown-chevron" viewBox="0 0 16 16" width="11" height="11" fill="currentColor" aria-hidden="true">
+                <path d="M3.204 5h9.592L8 10.481 3.204 5z"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown-menu" id="dropdownLayanan" role="menu" aria-labelledby="navLayananBtn">
+              <div class="dropdown-header">
+                <span class="dropdown-kicker">Katalog Layanan Medis</span>
+                <a href="layanan.html" class="dropdown-view-all">Lihat Semua Layanan →</a>
+              </div>
+              <div class="dropdown-grid">
+                <div class="dropdown-col">
+                  <span class="dropdown-col-title">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                    Layanan Dokter
+                  </span>
+                  <ul class="dropdown-list">
+                    <li><a href="layanan.html#dokter-umum" class="dropdown-item"><span class="dropdown-item-title">Kunjungan Dokter Umum</span><span class="dropdown-item-arrow" aria-hidden="true">→</span></a></li>
+                    <li><a href="layanan.html#dokter-lansia" class="dropdown-item"><span class="dropdown-item-title">Konsultasi Lansia &amp; Tirah Baring</span><span class="dropdown-item-arrow" aria-hidden="true">→</span></a></li>
+                    <li><a href="layanan.html#dokter-pascarawat" class="dropdown-item"><span class="dropdown-item-title">Evaluasi Pemulihan Pasca Rawat</span><span class="dropdown-item-arrow" aria-hidden="true">→</span></a></li>
+                  </ul>
+                </div>
+                <div class="dropdown-col">
+                  <span class="dropdown-col-title">
+                    <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    Layanan Perawat
+                  </span>
+                  <ul class="dropdown-list">
+                    <li><a href="layanan.html#perawat-luka" class="dropdown-item"><span class="dropdown-item-title">Perawatan Luka &amp; Pasca Bedah</span><span class="dropdown-item-arrow" aria-hidden="true">→</span></a></li>
+                    <li><a href="layanan.html#perawat-medis" class="dropdown-item"><span class="dropdown-item-title">Pendampingan Perawat Medis</span><span class="dropdown-item-arrow" aria-hidden="true">→</span></a></li>
+                    <li><a href="layanan.html#perawat-edukasi" class="dropdown-item"><span class="dropdown-item-title">Edukasi &amp; Perawatan Mandiri</span><span class="dropdown-item-arrow" aria-hidden="true">→</span></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="dropdown-footer">
+                <span class="dropdown-footer-text">Wilayah aktif: <strong>Kabupaten Banyuwangi</strong></span>
+                <a href="kontak.html" class="dropdown-footer-link">Konsultasi Sekarang →</a>
+              </div>
+            </div>
+          </li>
+          <li><a href="cara-kerja.html" class="nav-link">Cara Kerja</a></li>
+          <li><a href="tentang-kami.html" class="nav-link">Tentang Kami</a></li>
+          <li><a href="artikel.html" class="nav-link active" aria-current="page">Artikel</a></li>
+          <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="kontak.html" class="btn btn-primary btn-sm">Hubungi Kami</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+  <main id="main">
+    <article class="single-article-page">
+      <header class="page-hero">
+        <div class="site-container">
+          <div class="page-hero-inner" style="max-width: 860px;">
+            <nav class="crumbs" aria-label="Breadcrumb">
+              <a href="index.html">Beranda</a>
+              <span aria-hidden="true">/</span>
+              <a href="artikel.html">Artikel Edukasi</a>
+              <span aria-hidden="true">/</span>
+              <span>Monitoring Tanda Vital</span>
+            </nav>
+            <span class="article-tag" style="font-size: 0.8125rem;">MONITORING KESEHATAN</span>
+            <h1 class="single-article-title">Pentingnya Catatan Tanda Vital Berkala bagi Penderita Hipertensi &amp; Diabetes</h1>
+            <p class="single-article-lead">Penyakit kronis degeneratif membutuhkan pengawasan ketat. Ketahui bagaimana buku catatan harian tanda vital dapat menyelamatkan nyawa orang tua Anda dari komplikasi mendadak.</p>
+            
+            <div class="article-full-meta">
+              <span class="article-full-meta-item">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/></svg>
+                Ditinjau oleh: <strong>dr. Tim Medis CareWangi</strong>
+              </span>
+              <span>•</span>
+              <span class="article-full-meta-item">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                4 Menit Baca
+              </span>
+              <span>•</span>
+              <span>Wilayah: Kabupaten Banyuwangi</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="section" style="padding-top: var(--s6);">
+        <div class="site-container articles-layout">
+          <!-- MAIN READING CONTENT -->
+          <div class="articles-main-content">
+            <div class="single-article-media">
+              <img src="assets/images/artikel-tanda-vital.jpg" alt="Pemeriksaan tanda vital berkala di rumah" width="900" height="500">
+            </div>
+
+            <div class="article-toc">
+              <div class="article-toc-title">Daftar Isi Artikel:</div>
+              <ul class="article-toc-list">
+                <li><a href="#bahaya-tersembunyi">1. Bahaya Tersembunyi Tanpa Gejala (Silent Killer)</a></li>
+                <li><a href="#efek-jas-putih">2. Fenomena "White Coat Syndrome" di Fasilitas Kesehatan</a></li>
+                <li><a href="#parameter-wajib">3. 4 Parameter Vital yang Wajib Dipantau Rutin</a></li>
+                <li><a href="#cara-pengukuran">4. Cara Pengukuran Tensi dan Gula Darah yang Benar</a></li>
+              </ul>
+            </div>
+
+            <div class="article-full-content">
+              <h2 id="bahaya-tersembunyi">1. Bahaya Tersembunyi Tanpa Gejala (Silent Killer)</h2>
+              <p>Hipertensi dan diabetes kerap dijuluki pembunuh senyap karena penderitanya sering merasa "baik-baik saja" meski tekanan darah sudah melampaui 160/100 mmHg atau gula darah menembus 250 mg/dL. Kerusakan dinding pembuluh darah otak, ginjal, dan jantung berlangsung tanpa rasa sakit hingga akhirnya memicu stroke trombotik atau gagal ginjal akut.</p>
+
+              <h2 id="efek-jas-putih">2. Fenomena "White Coat Syndrome" di Fasilitas Kesehatan</h2>
+              <p>Banyak lansia mengalami lonjakan tensi semu saat diperiksa di klinik atau rumah sakit akibat rasa gugup, kelelahan perjalanan, dan antrean panjang. Sebaliknya, pemeriksaan tensi yang dilakukan di rumah saat pasien sedang santai di sofa keluarga mencerminkan kondisi hemodinamik tubuh yang sesungguhnya.</p>
+              <p>Data catatan harian di rumah ini sangat bernilai bagi dokter umum CareWangi untuk menentukan apakah dosis obat antihipertensi pasien perlu ditingkatkan, diturunkan, atau tetap dipertahankan.</p>
+
+              <h2 id="parameter-wajib">3. 4 Parameter Vital yang Wajib Dipantau Rutin</h2>
+              <p>Keluarga disarankan memiliki alat kesehatan mandiri dan mencatat 4 indikator ini:</p>
+              <ul>
+                <li><strong>Tekanan Darah (Sistolik / Diastolik):</strong> Target ideal lansia berkisar di bawah 130/80 mmHg (atau disesuaikan dengan instruksi dokter).</li>
+                <li><strong>Gula Darah Sewaktu (GDS) &amp; Puasa (GDP):</strong> Waspadai jika angka turun di bawah 70 mg/dL (gejala gemetar, keringat dingin, linglung) atau melonjak di atas 200 mg/dL.</li>
+                <li><strong>Denyut Nadi (Heart Rate):</strong> Normal 60–100 kali per menit dengan irama denyut yang teratur.</li>
+                <li><strong>Saturasi Oksigen (SpO2):</strong> Menilai kecukupan oksigen darah dengan oximeter jari, normal 95%–100%.</li>
+              </ul>
+
+              <h2 id="cara-pengukuran">4. Cara Pengukuran Tensi dan Gula Darah yang Benar</h2>
+              <p>Agar hasil pengukuran akurat dan valid:</p>
+              <ol>
+                <li>Istirahat tenang minimal 5 menit sebelum pengukuran tensi. Jangan mengobrol saat manset mengembang.</li>
+                <li>Letakkan lengan di atas meja setinggi posisi jantung.</li>
+                <li>Gunakan manset dengan ukuran lingkar lengan yang pas (tidak terlalu sempit atau longgar).</li>
+                <li>Catat tanggal, jam, angka hasil, dan obat yang baru saja dikonsumsi dalam satu buku jurnal khusus.</li>
+              </ol>
+
+              <div class="article-callout-box">
+                <strong>Kapan Harus Segera Memanggil Tenaga Medis?</strong>
+                Bila tekanan darah sistolik melebihi 180 mmHg disertai nyeri kepala hebat, pandangan kabur, atau kebas pada salah satu sisi tubuh, segera minta pertolongan medis gawat darurat.
+              </div>
+
+              <div class="article-author-card">
+                <div class="author-avatar">CW</div>
+                <div class="author-info">
+                  <h4>Ditinjau oleh dr. Tim Medis CareWangi</h4>
+                  <p>Informasi medis ini disusun dan ditinjau secara profesional oleh dokter dan perawat CareWangi untuk mendukung edukasi kesehatan keluarga di wilayah Kabupaten Banyuwangi.</p>
+                </div>
+              </div>
+
+              <div class="article-share-bar">
+                <span class="article-share-text">Bagikan artikel ini kepada keluarga:</span>
+                <div class="article-share-actions">
+                  <a href="https://api.whatsapp.com/send?text=Pentingnya%20Catatan%20Tanda%20Vital%20Berkala%20-%20CareWangi" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Bagikan ke WhatsApp</a>
+                </div>
+              </div>
+
+              <div class="article-action-banner">
+                <div class="article-action-text">
+                  <h4>Ingin Kunjungan Rutin Dokter untuk Evaluasi Tensi &amp; Obat?</h4>
+                  <p>CareWangi siap membantu menghubungkan Anda dengan informasi kunjungan dokter umum ke rumah di Banyuwangi.</p>
+                </div>
+                <a href="https://wa.me/?text=Halo%20CareWangi%2C%20saya%20ingin%20konsultasi%20layanan%20kunjungan%20dokter%20untuk%20evaluasi%20kesehatan%20rutin." class="btn btn-primary" target="_blank" rel="noopener noreferrer">Hubungi CareWangi</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SIDEBAR -->
+          <aside class="article-sidebar">
+            <div class="sidebar-widget">
+              <h3 class="sidebar-widget-title">Artikel Terkait Lainnya</h3>
+              <nav class="sidebar-nav-list" aria-label="Artikel Terkait">
+                <a href="artikel-cegah-dekubitus.html" class="sidebar-nav-item">
+                  <span>🧓 Pencegahan Luka Dekubitus</span>
+                </a>
+                <a href="artikel-perawatan-luka.html" class="sidebar-nav-item">
+                  <span>🩹 Perawatan Luka Pasca Bedah</span>
+                </a>
+                <a href="artikel-pasca-rawat.html" class="sidebar-nav-item">
+                  <span>🏥 Transisi Pasca Rawat Inap RS</span>
+                </a>
+                <a href="artikel-edukasi-caregiver.html" class="sidebar-nav-item">
+                  <span>💡 Higiene &amp; Bimbingan Caregiver</span>
+                </a>
+              </nav>
+            </div>
+
+            <div class="sidebar-widget">
+              <h3 class="sidebar-widget-title">Layanan Terkait</h3>
+              <p style="font-size: 0.84375rem; color: var(--ink-muted); margin-bottom: 12px; line-height: 1.5;">Kunjungan dokter umum dan cek darah kapiler (gula darah, kolesterol, tensi) di rumah.</p>
+              <a href="layanan.html#dokter-umum" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center;">Rincian Dokter Umum →</a>
+            </div>
+
+            <div class="sidebar-widget" style="background: var(--sage-50); border-color: var(--sage);">
+              <h3 class="sidebar-widget-title" style="color: var(--teal-dark);">Konsultasi CareWangi</h3>
+              <p style="font-size: 0.84375rem; color: var(--ink-muted); margin-bottom: 12px; line-height: 1.5;">Informasi kunjungan tenaga kesehatan khusus wilayah Kabupaten Banyuwangi.</p>
+              <a href="kontak.html" class="btn btn-primary btn-sm" style="width: 100%; justify-content: center;">Hubungi Kontak Kami →</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-container footer-grid">
+      <div class="footer-col-brand">
+        <a href="index.html" class="footer-logo" aria-label="CareWangi Beranda">
+          <svg viewBox="0 0 32 32" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="#1868BE"/>
+            <path d="M16 8v16M8 16h16" stroke="#ffffff" stroke-width="2.75" stroke-linecap="round"/>
+          </svg>
+          <span class="footer-logo-text"><span class="brand-white">Care</span><span class="brand-sage">Wangi</span></span>
+        </a>
+        <p class="footer-desc">Platform informasi layanan kunjungan dokter dan perawat ke rumah untuk masyarakat Kabupaten Banyuwangi, Jawa Timur.</p>
+        <div class="footer-region-badge">
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+          <span>Kabupaten Banyuwangi, Jawa Timur</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Halaman</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="cara-kerja.html">Cara Kerja</a></li>
+          <li><a href="tentang-kami.html">Tentang Kami</a></li>
+          <li><a href="artikel.html">Artikel Edukasi</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Informasi Layanan</h4>
+        <ul class="footer-links">
+          <li><a href="layanan.html#dokter">Kunjungan Dokter</a></li>
+          <li><a href="layanan.html#perawat">Kunjungan Perawat</a></li>
+          <li><a href="cara-kerja.html">Alur Komunikasi</a></li>
+          <li><a href="tentang-kami.html#wilayah">Cakupan Wilayah</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Kontak</h4>
+        <ul class="footer-links">
+          <li><a href="kontak.html">Halaman Kontak</a></li>
+          <li><a href="kontak.html#form">Formulir Pesan</a></li>
+          <li><a href="kontak.html#faq">Pertanyaan Umum</a></li>
+        </ul>
+        <p class="footer-note">Kabupaten Banyuwangi, Jawa Timur.<br>Nomor telepon, email, dan alamat akan dicantumkan setelah tersedia.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="site-container footer-bottom-inner">
+        <p>© <span id="currentYear">2026</span> CareWangi. Seluruh hak cipta dilindungi.</p>
+        <p class="footer-subtext">Platform informasi layanan kesehatan panggilan ke rumah, Kabupaten Banyuwangi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="https://wa.me/?text=Halo%20CareWangi%2C%20saya%20ingin%20mengetahui%20informasi%20mengenai%20layanan%20kunjungan%20dokter%20dan%20perawat%20ke%20rumah."
+     class="floating-wa"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Hubungi CareWangi melalui WhatsApp"
+     title="Hubungi CareWangi melalui WhatsApp">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

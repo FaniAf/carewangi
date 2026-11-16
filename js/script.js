@@ -248,4 +248,34 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateNavState);
     setTimeout(updateNavState, 150);
   }
+
+  /* ------------------------------------------------------------------------
+     9. FILTER KATALOG ARTIKEL (artikel.html)
+     ------------------------------------------------------------------------ */
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const catalogGrid = document.getElementById('articlesCatalogGrid');
+
+  if (filterPills.length && catalogGrid) {
+    const cards = catalogGrid.querySelectorAll('.article-card');
+
+    filterPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        const filter = pill.getAttribute('data-filter');
+
+        // Update active class
+        filterPills.forEach((p) => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        // Filter cards
+        cards.forEach((card) => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
 });
