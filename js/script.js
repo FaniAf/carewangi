@@ -278,4 +278,39 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ------------------------------------------------------------------------
+     10. SLIDER MANUAL TESTIMONI (Beranda)
+     ------------------------------------------------------------------------ */
+  const testiTrack = document.getElementById('testiTrack');
+  const testiPrevBtn = document.getElementById('testiPrevBtn');
+  const testiNextBtn = document.getElementById('testiNextBtn');
+
+  if (testiTrack && testiPrevBtn && testiNextBtn) {
+    const updateTestiNav = () => {
+      const scrollLeft = Math.ceil(testiTrack.scrollLeft);
+      const maxScroll = testiTrack.scrollWidth - testiTrack.clientWidth;
+      testiPrevBtn.disabled = scrollLeft <= 8;
+      testiNextBtn.disabled = scrollLeft >= maxScroll - 8;
+    };
+
+    const getTestiScrollStep = () => {
+      const card = testiTrack.querySelector('.testi-card');
+      const cardWidth = card ? card.offsetWidth : 380;
+      const gap = 24;
+      return cardWidth + gap;
+    };
+
+    testiPrevBtn.addEventListener('click', () => {
+      testiTrack.scrollBy({ left: -getTestiScrollStep(), behavior: 'smooth' });
+    });
+
+    testiNextBtn.addEventListener('click', () => {
+      testiTrack.scrollBy({ left: getTestiScrollStep(), behavior: 'smooth' });
+    });
+
+    testiTrack.addEventListener('scroll', updateTestiNav, { passive: true });
+    window.addEventListener('resize', updateTestiNav);
+    setTimeout(updateTestiNav, 150);
+  }
 });

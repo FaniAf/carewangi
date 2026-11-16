@@ -1663,6 +1663,235 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 }
 
 /* ==========================================================================
+   SECTION TESTIMONI KELUARGA (Reference Design)
+   ========================================================================== */
+.section-testimonials {
+  background: #f8fafc;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: var(--section-y) 0;
+  position: relative;
+}
+
+.testi-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s6);
+  margin-bottom: var(--s6);
+}
+
+.testi-header-left {
+  max-width: 640px;
+}
+
+.testi-main-title {
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 10px 0;
+}
+
+.testi-subtitle {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.testi-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+/* Rating Badge di Header */
+.testi-rating-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 8px 16px;
+  box-shadow: 0 2px 10px rgba(7, 34, 61, 0.04);
+}
+
+.testi-star-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #FEF3C7;
+  color: #D97706;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testi-rating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-score {
+  font-size: 0.8125rem;
+  color: var(--ink-muted);
+  line-height: 1.2;
+}
+
+.testi-score strong {
+  font-size: 1.0625rem;
+  color: var(--teal-deep);
+  font-weight: 700;
+}
+
+.testi-count {
+  font-size: 0.71875rem;
+  font-weight: 600;
+  color: #059669;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.testi-count-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  display: inline-block;
+}
+
+.testi-nav-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Slider Track Testimoni */
+.testi-slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.testi-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 28px 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testi-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Kartu Testimoni */
+.testi-card {
+  flex: 0 0 380px;
+  max-width: 400px;
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px 28px 24px 28px;
+  box-shadow: 0 4px 18px rgba(7, 34, 61, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.testi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px -8px rgba(13, 82, 156, 0.12);
+  border-color: var(--sage);
+}
+
+.testi-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.testi-stars-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-radius: var(--r-full);
+  padding: 4px 10px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #D97706;
+}
+
+.testi-stars {
+  letter-spacing: 1px;
+}
+
+.testi-quote-icon {
+  color: #CBD5E1;
+  opacity: 0.7;
+}
+
+.testi-card-quote {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+
+.testi-card-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-light);
+}
+
+.testi-author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #E2E8F0;
+  flex-shrink: 0;
+  background: #E2EAF2;
+}
+
+.testi-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-author-name {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--teal-deep);
+  margin: 0 0 2px 0;
+}
+
+.testi-author-meta {
+  font-size: 0.78125rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
    HALAMAN ARTIKEL LENGKAP (ARTIKEL.HTML)
    ========================================================================== */
 .articles-layout {
@@ -2711,6 +2940,8 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   .articles-catalog-grid { grid-template-columns: 1fr; }
   .article-sidebar { position: static; }
   .related-articles-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .testi-header { flex-direction: column; align-items: flex-start; gap: var(--s4); }
+  .testi-card { flex: 0 0 340px; }
 
   .cta-editorial { padding: var(--s8) var(--s6); }
   .page-hero { padding: var(--s8) 0 var(--s6); }
@@ -2929,6 +3160,8 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   .article-action-banner { flex-direction: column; align-items: flex-start; gap: var(--s3); }
   .related-articles-grid { grid-template-columns: 1fr; }
   .article-subnav-bar { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .testi-header-right { width: 100%; justify-content: space-between; }
+  .testi-card { flex: 0 0 285px; padding: 22px 20px 20px; }
 
   .cta-editorial { padding: var(--s6) var(--s4); border-radius: var(--r-lg); }
   .cta-editorial-title { font-size: 1.75rem; }
