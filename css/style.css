@@ -1435,6 +1435,439 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 .faq-item p { color: var(--ink-muted); font-size: 0.9375rem; }
 
 /* --------------------------------------------------------------------------
+   16B. SECTION ARTIKEL & SLIDER MANUAL (BERANDA & ARTIKEL)
+   -------------------------------------------------------------------------- */
+.section-articles {
+  padding: var(--section-y) 0;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.articles-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s4);
+  margin-bottom: var(--s6);
+}
+
+.articles-header-left {
+  max-width: 680px;
+}
+
+.articles-main-title {
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin: var(--s1) 0 var(--s2) 0;
+}
+
+.articles-subtitle {
+  color: var(--ink-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Navigasi Panah Slider Manual (Persis Gambar 1) */
+.articles-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.article-nav-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1.5px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--teal-deep);
+  box-shadow: 0 2px 8px rgba(7, 34, 61, 0.05);
+  user-select: none;
+}
+
+.article-nav-btn.btn-next {
+  background: var(--teal-deep);
+  color: #ffffff;
+  border-color: var(--teal-deep);
+}
+
+.article-nav-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(7, 34, 61, 0.15);
+}
+
+.article-nav-btn.btn-prev:hover:not(:disabled) {
+  background: var(--sage-50);
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.article-nav-btn.btn-next:hover:not(:disabled) {
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+.article-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Slider Track Horizontal Manual */
+.articles-slider-container {
+  position: relative;
+  width: 100%;
+}
+
+.articles-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 24px 4px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.articles-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Kartu Artikel (Proporsi Persis Gambar 2) */
+.article-card {
+  flex: 0 0 350px;
+  max-width: 380px;
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(7, 34, 61, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.article-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px -8px rgba(13, 82, 156, 0.18);
+  border-color: var(--sage);
+}
+
+.article-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #e2eaf2;
+}
+
+.article-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.article-card:hover .article-photo {
+  transform: scale(1.05);
+}
+
+.article-card-body {
+  padding: 22px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.article-card-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.4;
+  margin-bottom: 10px;
+  letter-spacing: -0.015em;
+}
+
+.article-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+.article-card-title a:hover {
+  color: var(--teal);
+}
+
+.article-card-snippet {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card-footer {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.article-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.article-read-more span {
+  transition: transform 0.18s ease;
+}
+
+.article-read-more:hover {
+  color: var(--teal-dark);
+}
+
+.article-read-more:hover span {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   HALAMAN ARTIKEL LENGKAP (ARTIKEL.HTML)
+   ========================================================================== */
+.articles-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--s8);
+  align-items: start;
+}
+
+.article-full-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  padding: var(--s7);
+  box-shadow: 0 4px 20px rgba(7, 34, 61, 0.04);
+  margin-bottom: var(--s8);
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.article-full-item:target {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(13, 82, 156, 0.18), var(--shadow-soft);
+  animation: targetPulse 1.8s ease;
+}
+
+.article-full-header {
+  margin-bottom: var(--s5);
+}
+
+.article-full-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  color: var(--ink-light);
+  margin-top: 8px;
+}
+
+.article-full-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.article-full-title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.3;
+  margin: 10px 0;
+  letter-spacing: -0.02em;
+}
+
+.article-full-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  margin-bottom: var(--s6);
+  background: var(--sage-50);
+}
+
+.article-full-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-full-content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.article-full-content p {
+  margin-bottom: var(--s3);
+  color: #243547;
+}
+
+.article-full-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--teal-deep);
+  margin: var(--s5) 0 var(--s2) 0;
+  letter-spacing: -0.015em;
+}
+
+.article-full-content ul, .article-full-content ol {
+  margin: var(--s3) 0 var(--s5) 0;
+  padding-left: 20px;
+}
+
+.article-full-content li {
+  margin-bottom: 10px;
+  color: #334455;
+  line-height: 1.65;
+}
+
+.article-callout-box {
+  background: var(--sage-50);
+  border-left: 4px solid var(--teal);
+  border-radius: 8px;
+  padding: var(--s4);
+  margin: var(--s5) 0;
+  font-size: 0.9375rem;
+  color: var(--teal-deep);
+}
+
+.article-callout-box strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: var(--teal);
+}
+
+.article-action-banner {
+  background: linear-gradient(135deg, #07223D 0%, #0D529C 100%);
+  border-radius: var(--r-lg);
+  padding: var(--s5);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  margin-top: var(--s6);
+}
+
+.article-action-text h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.article-action-text p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.article-action-banner .btn {
+  flex-shrink: 0;
+  background: #ffffff;
+  color: var(--teal);
+  border-color: #ffffff;
+}
+
+.article-action-banner .btn:hover {
+  background: var(--sage-50);
+}
+
+/* Sidebar Artikel */
+.article-sidebar {
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+}
+
+.sidebar-widget {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: var(--s4);
+  box-shadow: 0 2px 12px rgba(7, 34, 61, 0.04);
+}
+
+.sidebar-widget-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--teal-deep);
+  margin-bottom: var(--s3);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--line);
+}
+
+.sidebar-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-nav-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.84375rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.4;
+  transition: all 0.18s ease;
+}
+
+.sidebar-nav-item:hover {
+  background: var(--sage-50);
+  color: var(--teal);
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
    17. FOOTER (Modern Healthcare Editorial)
    -------------------------------------------------------------------------- */
 .site-footer {
@@ -1717,6 +2150,9 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   .workflow-aside { position: static; }
   .guide-card { position: static; top: auto; margin-top: var(--s2); }
 
+  .articles-layout { grid-template-columns: 1fr; }
+  .article-sidebar { position: static; }
+
   .cta-editorial { padding: var(--s8) var(--s6); }
   .page-hero { padding: var(--s8) 0 var(--s6); }
 
@@ -1927,6 +2363,11 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   .t-no { font-size: 2rem; }
   .t-step h3 { font-size: 1.25rem; }
   .guide-card { padding: var(--s4) var(--s3); }
+
+  .articles-header { flex-direction: column; align-items: flex-start; gap: var(--s3); }
+  .article-card { flex: 0 0 280px; max-width: 300px; }
+  .article-full-item { padding: var(--s4) var(--s3); }
+  .article-action-banner { flex-direction: column; align-items: flex-start; gap: var(--s3); }
 
   .cta-editorial { padding: var(--s6) var(--s4); border-radius: var(--r-lg); }
   .cta-editorial-title { font-size: 1.75rem; }

@@ -213,4 +213,39 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.setAttribute('href', waHref);
     });
   }
+
+  /* ------------------------------------------------------------------------
+     8. SLIDER MANUAL ARTIKEL (Beranda)
+     ------------------------------------------------------------------------ */
+  const articlesTrack = document.getElementById('articlesTrack');
+  const prevBtn = document.getElementById('articlePrevBtn');
+  const nextBtn = document.getElementById('articleNextBtn');
+
+  if (articlesTrack && prevBtn && nextBtn) {
+    const updateNavState = () => {
+      const scrollLeft = Math.ceil(articlesTrack.scrollLeft);
+      const maxScroll = articlesTrack.scrollWidth - articlesTrack.clientWidth;
+      prevBtn.disabled = scrollLeft <= 8;
+      nextBtn.disabled = scrollLeft >= maxScroll - 8;
+    };
+
+    const getScrollStep = () => {
+      const card = articlesTrack.querySelector('.article-card');
+      const cardWidth = card ? card.offsetWidth : 350;
+      const gap = 24;
+      return cardWidth + gap;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      articlesTrack.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      articlesTrack.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+    });
+
+    articlesTrack.addEventListener('scroll', updateNavState, { passive: true });
+    window.addEventListener('resize', updateNavState);
+    setTimeout(updateNavState, 150);
+  }
 });

@@ -301,15 +301,117 @@
       </div>
     </section>
 
-    <!-- SECTION 5 — TENTANG CAREWANGI -->
-    <section class="section section-sage" aria-labelledby="tentang-title">
-      <div class="site-container about-grid">
-        <img src="assets/images/layanan-dokter.jpg" alt="Tenaga kesehatan tersenyum ramah dengan stetoskop" class="about-photo reveal" width="1000" height="1250" loading="lazy">
-        <div class="about-text reveal">
-          <span class="eyebrow">Tentang CareWangi</span>
-          <h2 id="tentang-title">Mendekatkan Informasi Kesehatan kepada Keluarga Banyuwangi.</h2>
-          <p>CareWangi hadir untuk membantu masyarakat mendapatkan informasi mengenai layanan kunjungan dokter dan perawat ke rumah. Dengan fokus pada wilayah Kabupaten Banyuwangi, CareWangi ingin mempermudah masyarakat dalam mengenal layanan dan mengomunikasikan kebutuhan perawatan kesehatan di rumah.</p>
-          <a href="tentang-kami.html" class="btn btn-outline"><span>Tentang CareWangi</span><svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg></a>
+    <!-- SECTION 5 — ARTIKEL & EDUKASI KESEHATAN -->
+    <section class="section section-articles" id="artikel" aria-labelledby="artikel-title">
+      <div class="site-container">
+        <div class="articles-header">
+          <div class="articles-header-left">
+            <span class="eyebrow">Informasi &amp; Edukasi</span>
+            <h2 id="artikel-title" class="articles-main-title">Artikel &amp; Panduan Kesehatan Keluarga</h2>
+            <p class="articles-subtitle">Wawasan praktis perawatan pasien di rumah, panduan kesehatan lansia, dan informasi medis terpercaya dari CareWangi.</p>
+          </div>
+          <div class="articles-header-nav" aria-label="Navigasi Slider Artikel">
+            <button type="button" class="article-nav-btn btn-prev" id="articlePrevBtn" aria-label="Geser artikel ke kiri" disabled>
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button type="button" class="article-nav-btn btn-next" id="articleNextBtn" aria-label="Geser artikel ke kanan">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slider track (Manual Scroll) -->
+        <div class="articles-slider-container" id="articlesSlider">
+          <div class="articles-track" id="articlesTrack">
+            <!-- Article Card 1 -->
+            <article class="article-card">
+              <div class="article-card-media">
+                <img src="assets/images/artikel-dekubitus.jpg" alt="Perawatan pasien lansia tirah baring di rumah" class="article-photo" width="600" height="380" loading="lazy">
+              </div>
+              <div class="article-card-body">
+                <span class="article-tag">TIPS PERAWATAN LANSIA</span>
+                <h3 class="article-card-title">
+                  <a href="artikel.html#cegah-dekubitus">Panduan Merawat Pasien Tirah Baring agar Bebas Luka Dekubitus</a>
+                </h3>
+                <p class="article-card-snippet">Ketahui teknik alih baring miring kanan-kiri tiap 2 jam, pemilihan kasur anti-dekubitus, serta perawatan higienitas kulit pasien berbaring lama.</p>
+                <div class="article-card-footer">
+                  <a href="artikel.html#cegah-dekubitus" class="article-read-more">Baca selengkapnya <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article Card 2 -->
+            <article class="article-card">
+              <div class="article-card-media">
+                <img src="assets/images/artikel-perawatan-luka.jpg" alt="Perawatan luka pasca bedah steril oleh perawat" class="article-photo" width="600" height="380" loading="lazy">
+              </div>
+              <div class="article-card-body">
+                <span class="article-tag">PERAWATAN LUKA STERIL</span>
+                <h3 class="article-card-title">
+                  <a href="artikel.html#perawatan-luka">Perawatan Luka Pasca Operasi: Kapan Perlu Bantuan Perawat Medis?</a>
+                </h3>
+                <p class="article-card-snippet">Kenali tanda bahaya infeksi jahitan bedah, cara mengganti balutan tahan air, serta pentingnya teknik aseptik untuk penyembuhan optimal.</p>
+                <div class="article-card-footer">
+                  <a href="artikel.html#perawatan-luka" class="article-read-more">Baca selengkapnya <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article Card 3 -->
+            <article class="article-card">
+              <div class="article-card-media">
+                <img src="assets/images/artikel-tanda-vital.jpg" alt="Pemeriksaan tensi darah dan denyut nadi oleh dokter" class="article-photo" width="600" height="380" loading="lazy">
+              </div>
+              <div class="article-card-body">
+                <span class="article-tag">MONITORING KESEHATAN</span>
+                <h3 class="article-card-title">
+                  <a href="artikel.html#tanda-vital">Pentingnya Catatan Tanda Vital Berkala bagi Penderita Hipertensi &amp; Diabetes</a>
+                </h3>
+                <p class="article-card-snippet">Pencatatan tensi dan kadar gula darah harian dapat mencegah komplikasi fatal stroke dan serangan jantung di lingkungan rumah.</p>
+                <div class="article-card-footer">
+                  <a href="artikel.html#tanda-vital" class="article-read-more">Baca selengkapnya <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article Card 4 -->
+            <article class="article-card">
+              <div class="article-card-media">
+                <img src="assets/images/artikel-pasca-rawat.jpg" alt="Konsultasi dokter dan keluarga mengenai transisi pulang dari RS" class="article-photo" width="600" height="380" loading="lazy">
+              </div>
+              <div class="article-card-body">
+                <span class="article-tag">PASCA RAWAT INAP</span>
+                <h3 class="article-card-title">
+                  <a href="artikel.html#pasca-rawat">Transisi Pasien Pulang dari Rumah Sakit: 4 Hal Wajib Disiapkan Keluarga</a>
+                </h3>
+                <p class="article-card-snippet">Panduan mengelola obat pulang dari RS, persiapan ruangan berventilasi baik, serta jadwal evaluasi dokter untuk cegah rawat inap ulang.</p>
+                <div class="article-card-footer">
+                  <a href="artikel.html#pasca-rawat" class="article-read-more">Baca selengkapnya <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article Card 5 -->
+            <article class="article-card">
+              <div class="article-card-media">
+                <img src="assets/images/artikel-caregiver.jpg" alt="Pendampingan perawat dan caregiver untuk pasien lemah di rumah" class="article-photo" width="600" height="380" loading="lazy">
+              </div>
+              <div class="article-card-body">
+                <span class="article-tag">BIMBINGAN CAREGIVER</span>
+                <h3 class="article-card-title">
+                  <a href="artikel.html#edukasi-caregiver">Higiene Pasien Lemah: Mencegah Tersedak saat Makan &amp; Menjaga Mulut</a>
+                </h3>
+                <p class="article-card-snippet">Tips postur tubuh aman saat menyuapi makanan dan cara membersihkan rongga mulut lansia agar terhindar dari komplikasi pneumonia aspirasi.</p>
+                <div class="article-card-footer">
+                  <a href="artikel.html#edukasi-caregiver" class="article-read-more">Baca selengkapnya <span aria-hidden="true">→</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -359,6 +461,7 @@
           <li><a href="layanan.html">Layanan</a></li>
           <li><a href="cara-kerja.html">Cara Kerja</a></li>
           <li><a href="tentang-kami.html">Tentang Kami</a></li>
+          <li><a href="artikel.html">Artikel Edukasi</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </div>
