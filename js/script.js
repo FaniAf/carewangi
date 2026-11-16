@@ -313,4 +313,28 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateTestiNav);
     setTimeout(updateTestiNav, 150);
   }
+
+  /* ------------------------------------------------------------------------
+     11. TOMBOL SCROLL KE ATAS (Kiri Bawah)
+     ------------------------------------------------------------------------ */
+  const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+  if (scrollToTopBtn) {
+    const handleScrollTopVisibility = () => {
+      if (window.scrollY > 280) {
+        scrollToTopBtn.classList.add('is-visible');
+      } else {
+        scrollToTopBtn.classList.remove('is-visible');
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollTopVisibility, { passive: true });
+    handleScrollTopVisibility();
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
 });
