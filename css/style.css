@@ -14,6 +14,7 @@
   --teal-deep: #0A2E27;
   --teal-soft: #146050;
   --sage: #D2E2D9;
+  --sage-200: #C2D5CA;
   --sage-100: #E4EDE7;
   --sage-50: #EFF4F0;
   --bg: #FAF8F4;
@@ -34,7 +35,9 @@
   --s4: 32px;
   --s5: 40px;
   --s6: 48px;
+  --s7: 56px;
   --s8: 64px;
+  --s9: 72px;
   --s10: 80px;
   --s12: 96px;
   --s15: 120px;
@@ -48,6 +51,7 @@
   --r-sm: 6px;
   --r-md: 10px;
   --r-lg: 16px;
+  --r-xl: 20px;
   --r-full: 999px;
 
   --shadow-soft: 0 12px 32px -16px rgba(10, 46, 39, 0.18);
@@ -714,7 +718,7 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
    -------------------------------------------------------------------------- */
 .page-hero {
   background: var(--sage-50);
-  padding: var(--s10) 0 var(--s9);
+  padding: var(--s10) 0 var(--s8);
   border-bottom: 1px solid var(--line);
   text-align: center;
 }
