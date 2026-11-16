@@ -353,32 +353,45 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   gap: 4px;
 }
 .dropdown-item {
-  display: block;
-  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
   border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  background: transparent;
+  transition: background-color 0.18s ease, transform 0.18s ease;
 }
 .dropdown-item:hover {
   background: #f0f6fc;
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
 .dropdown-item-title {
   display: block;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--ink);
-  line-height: 1.3;
-  margin-bottom: 2px;
+  line-height: 1.35;
+  transition: color 0.18s ease;
+}
+.dropdown-item-arrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--teal);
+  opacity: 0.45;
+  transform: translateX(0);
+  transition: transform 0.18s ease, opacity 0.18s ease, color 0.18s ease;
+  flex-shrink: 0;
 }
 .dropdown-item:hover .dropdown-item-title {
   color: var(--teal);
 }
-.dropdown-item-desc {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--ink-muted);
-  line-height: 1.4;
+.dropdown-item:hover .dropdown-item-arrow {
+  color: var(--teal);
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 .dropdown-footer {
@@ -1075,6 +1088,178 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 .scope li { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 0.9375rem; color: var(--ink-muted); line-height: 1.55; }
 .scope li svg { flex-shrink: 0; margin-top: 4px; color: var(--teal); }
 
+/* Subservices Grid & Cards */
+.subservices-wrapper {
+  margin-top: var(--s8);
+  padding-top: var(--s6);
+  border-top: 1px dashed var(--line);
+}
+
+.subservices-header {
+  margin-bottom: var(--s5);
+  max-width: 680px;
+}
+
+.subservices-title {
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  color: var(--teal-deep);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.subservices-desc {
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.subservices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s4);
+}
+
+.subservice-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(7, 34, 61, 0.04);
+  transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+  position: relative;
+  scroll-margin-top: calc(var(--nav-h) + 28px);
+}
+
+.subservice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -12px rgba(13, 82, 156, 0.18);
+  border-color: var(--sage);
+}
+
+/* :target visual highlight saat diarahkan dari navbar */
+.subservice-card:target {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(13, 82, 156, 0.22), var(--shadow-soft);
+  animation: targetPulse 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes targetPulse {
+  0% {
+    background-color: #f0f6fc;
+    box-shadow: 0 0 0 6px rgba(13, 82, 156, 0.35), var(--shadow-soft);
+  }
+  100% {
+    background-color: var(--surface);
+    box-shadow: 0 0 0 3px rgba(13, 82, 156, 0.22), var(--shadow-soft);
+  }
+}
+
+.subservice-card-header {
+  margin-bottom: var(--s2);
+}
+
+.subservice-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--sage-50);
+  border: 1px solid var(--sage-200);
+  border-radius: var(--r-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.subservice-name {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--teal-deep);
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+
+.subservice-summary {
+  font-size: 0.875rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin: 10px 0 var(--s3) 0;
+}
+
+.subservice-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: var(--s4);
+}
+
+.subservice-section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-light);
+  margin: 0;
+}
+
+.subservice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.subservice-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+.subservice-list li svg {
+  flex-shrink: 0;
+  color: var(--teal);
+  margin-top: 2px;
+}
+
+.subservice-target-box {
+  background: var(--sage-50);
+  border-left: 3px solid var(--teal);
+  border-radius: 4px;
+  padding: 10px 12px;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--teal-deep);
+  margin-top: auto;
+}
+
+.subservice-target-box strong {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.subservice-card-footer {
+  margin-top: auto;
+  padding-top: var(--s2);
+  border-top: 1px solid var(--line);
+}
+
+.subservice-card-footer .btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.8125rem;
+}
+
 .notes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s6); }
 .note-item { padding-top: var(--s3); border-top: 2px solid var(--teal); }
 .note-item h4 { margin-bottom: var(--s1); font-size: 1.0625rem; }
@@ -1525,6 +1710,7 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 
   .detail-grid.reverse .detail-media { order: 0; }
   .detail { padding: var(--s8) 0; }
+  .subservices-grid { grid-template-columns: 1fr; gap: var(--s3); }
   .notes-grid, .pillars { grid-template-columns: 1fr; gap: var(--s4); }
 
   .workflow-layout { grid-template-columns: 1fr; gap: var(--s6); }
@@ -1648,8 +1834,9 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   .site-header.scrolled .dropdown-item-title {
     color: #ffffff;
   }
-  .site-header.scrolled .dropdown-item-desc {
-    color: rgba(255, 255, 255, 0.7);
+  .site-header.scrolled .dropdown-item-arrow {
+    color: #93c5fd;
+    opacity: 0.8;
   }
   .site-header.scrolled .dropdown-item:hover {
     background: rgba(255, 255, 255, 0.08);
