@@ -1781,38 +1781,72 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 }
 
 .article-action-banner {
-  background: linear-gradient(135deg, #07223D 0%, #0D529C 100%);
-  border-radius: var(--r-lg);
-  padding: var(--s5);
+  position: relative;
+  background: linear-gradient(135deg, #0D529C 0%, #1565C0 50%, #1976D2 100%);
+  border-radius: var(--r-xl);
+  padding: 30px 34px;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--s4);
-  margin-top: var(--s6);
+  gap: var(--s5);
+  margin-top: var(--s8);
+  box-shadow: 0 12px 30px -6px rgba(13, 82, 156, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.article-action-banner::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.article-action-text {
+  max-width: 620px;
 }
 
 .article-action-text h4 {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 4px;
+  color: #ffffff !important;
+  margin: 0 0 8px 0;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .article-action-text p {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.94) !important;
+  line-height: 1.55;
   margin: 0;
 }
 
 .article-action-banner .btn {
   flex-shrink: 0;
-  background: #ffffff;
-  color: var(--teal);
-  border-color: #ffffff;
+  background: #ffffff !important;
+  color: #0D529C !important;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border: 1.5px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  padding: 12px 24px;
+  border-radius: var(--r-full);
+  transition: all 0.22s ease;
 }
 
 .article-action-banner .btn:hover {
-  background: var(--sage-50);
+  background: #f0f7ff !important;
+  color: #07223D !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 
 /* Sidebar Artikel */
