@@ -710,36 +710,51 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 }
 
 /* --------------------------------------------------------------------------
-   12. HERO HALAMAN DALAM & EDITORIAL VISUAL HERO
+   12. HERO HALAMAN DALAM (CENTERED EDITORIAL HERO)
    -------------------------------------------------------------------------- */
-.page-hero { background: var(--sage-50); padding: var(--s10) 0 var(--s8); border-bottom: 1px solid var(--line); }
-.page-hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--s8); align-items: center; }
-.crumbs { display: flex; gap: var(--s1); font-size: 0.8125rem; color: var(--ink-light); margin-bottom: var(--s3); }
+.page-hero {
+  background: var(--sage-50);
+  padding: var(--s10) 0 var(--s9);
+  border-bottom: 1px solid var(--line);
+  text-align: center;
+}
+.page-hero-inner {
+  max-width: 780px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.crumbs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s1);
+  font-size: 0.8125rem;
+  color: var(--ink-light);
+  margin-bottom: var(--s3);
+}
 .crumbs a:hover { color: var(--teal); }
-.page-hero h1 { font-size: clamp(2.125rem, 4vw, 3.125rem); margin-bottom: var(--s3); max-width: 15em; }
-.page-hero .lead { max-width: 560px; }
-
-/* Visual Hero Media */
-.page-hero-media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: var(--r-md);
-  border: 1px solid var(--line-strong);
-  background-color: var(--sage-100);
-  box-shadow: 0 4px 20px rgba(10, 46, 39, 0.05);
+.page-hero h1 {
+  font-size: clamp(2.125rem, 4vw, 3.125rem);
+  margin-bottom: var(--s3);
+  max-width: 22ch;
+  margin-inline: auto;
+  line-height: 1.25;
 }
-.page-hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.page-hero .lead {
+  max-width: 640px;
+  margin-inline: auto;
 }
 
-.page-hero-aside { font-size: 0.9375rem; color: var(--ink-muted); border-left: 2px solid var(--sage); padding-left: var(--s3); max-width: 360px; justify-self: end; }
-
-.jump-links { display: flex; flex-wrap: wrap; gap: var(--s2); margin-top: var(--s4); }
+.jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
 
 /* --------------------------------------------------------------------------
    13. HALAMAN LAYANAN
@@ -1143,7 +1158,7 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 
   .hero { padding: var(--s5) 0 var(--s10); }
   .hero-grid, .about-grid, .detail-grid, .region-grid, .contact-grid, .adv-grid,
-  .page-hero-grid, .section-head { grid-template-columns: 1fr; }
+  .section-head { grid-template-columns: 1fr; }
   .hero-grid { gap: var(--s6); }
   .hero-media { order: -1; padding: 24px 12px 20px 0; }
   .hero-photo { aspect-ratio: 4 / 3; border-radius: 8px; }
@@ -1188,9 +1203,7 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   .guide-card { position: static; top: auto; margin-top: var(--s2); }
 
   .cta-editorial { padding: var(--s8) var(--s6); }
-  .page-hero { padding: var(--s6) 0 var(--s5); }
-  .page-hero-grid { gap: var(--s6); }
-  .page-hero-aside { justify-self: start; margin-top: var(--s2); }
+  .page-hero { padding: var(--s8) 0 var(--s6); }
 
   .footer-grid { grid-template-columns: 1fr 1fr; gap: var(--s6) var(--s5); }
   .faq-item { grid-template-columns: 1fr; gap: var(--s1); }
@@ -1246,7 +1259,8 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 
   .site-container { width: min(var(--container), 100% - 32px); }
   h1 { font-size: 2.125rem; }
-  .page-hero-media { aspect-ratio: 16 / 10; }
+  .page-hero { padding: var(--s6) 0 var(--s5); }
+  .page-hero h1 { font-size: clamp(1.625rem, 7vw, 2rem); line-height: 1.2; max-width: 100%; }
 
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
