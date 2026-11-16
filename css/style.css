@@ -252,18 +252,182 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 .nav-backdrop { display: none; }
 
 /* --------------------------------------------------------------------------
-   6. HERO BERANDA
+   6. HERO BERANDA (PANORAMIC HEALTHCARE STAGE)
    -------------------------------------------------------------------------- */
-.hero { padding: var(--s8) 0 var(--s12); }
+.hero-panoramic {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #07223D;
+}
 
-.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--s10); align-items: center; }
+.hero-panoramic-stage {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: var(--s8);
+  padding-bottom: var(--s8);
+}
 
-.hero-title { margin-bottom: var(--s3); max-width: 14em; }
-.hero-title .hl { color: var(--teal-soft); }
+@media (min-width: 1024px) {
+  .hero-panoramic-stage {
+    min-height: 620px;
+    padding-bottom: var(--s9);
+  }
+}
 
-.hero-desc { font-size: 1.125rem; line-height: 1.7; color: var(--ink-muted); max-width: 520px; margin-bottom: var(--s5); }
+.hero-panoramic-picture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
 
-.hero-actions { display: flex; flex-wrap: wrap; gap: var(--s2); margin-bottom: var(--s6); align-items: center; }
+.hero-panoramic-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+  display: block;
+}
+
+.hero-panoramic-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(7, 34, 61, 0.95) 0%,
+    rgba(13, 82, 156, 0.72) 32%,
+    rgba(13, 82, 156, 0.16) 65%,
+    rgba(248, 250, 253, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.hero-panoramic-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.hero-panoramic-content {
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-stage-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  margin-bottom: var(--s3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.hero-stage-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 8px #60a5fa;
+}
+
+.hero-stage-title {
+  color: #ffffff;
+  font-size: clamp(1.625rem, 3.2vw + 0.5rem, 2.625rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  max-width: 860px;
+  margin: 0 auto var(--s3);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.hero-stage-desc {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(0.9375rem, 1vw + 0.45rem, 1.125rem);
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto var(--s5);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+}
+
+.hero-stage-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s3);
+  margin-bottom: var(--s5);
+  align-items: center;
+}
+
+.btn-outline-white {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s1);
+  padding: 0 var(--s4);
+  height: 48px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all var(--ease);
+}
+
+.btn-outline-white:hover {
+  background: #ffffff;
+  color: var(--teal-dark);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.hero-stage-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--s2) var(--s5);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-stage-facts li {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-stage-facts svg {
+  color: #93c5fd;
+  flex-shrink: 0;
+}
 
 /* Button Jelajahi Layanan Interaktif dengan Icon Care Bergerak */
 .btn-jelajah {
@@ -299,65 +463,6 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   object-fit: contain;
   display: block;
 }
-
-.hero-facts {
-  display: flex; flex-wrap: wrap; gap: var(--s1) var(--s4);
-  padding-top: var(--s3); border-top: 1px solid var(--line);
-  font-size: 0.875rem; font-weight: 500; color: var(--ink-muted);
-}
-.hero-facts li { display: inline-flex; align-items: center; gap: var(--s1); }
-.hero-facts li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--teal-soft); }
-
-.hero-media { position: relative; padding: 28px 16px 24px 0; }
-
-/* Subtle dot detail (aksen titik halus di belakang frame kanan-atas) */
-.hero-dot-pattern {
-  position: absolute;
-  top: 6px;
-  right: -6px;
-  width: 60px;
-  height: 60px;
-  background-image: radial-gradient(rgba(13, 82, 156, 0.16) 1.5px, transparent 1.5px);
-  background-size: 10px 10px;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.hero-image-wrap { position: relative; display: block; }
-
-/* Frame garis tipis aksen di belakang foto */
-.hero-image-wrap::before {
-  content: ""; position: absolute;
-  top: -12px; right: -12px; bottom: 12px; left: 12px;
-  border: 1.5px solid rgba(13, 82, 156, 0.22);
-  border-radius: 8px; z-index: 0; pointer-events: none;
-}
-
-.hero-photo {
-  position: relative; z-index: 1; display: block; width: 100%; aspect-ratio: 5 / 4.2;
-  object-fit: cover; object-position: 62% center;
-  border-radius: 8px;
-  box-shadow: 0 12px 32px rgba(7, 34, 61, 0.06), 0 2px 6px rgba(7, 34, 61, 0.03);
-}
-
-/* Animasi Mengambang Murni Bergerak Ke Atas dan Ke Bawah */
-@keyframes floatBobbing {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-12px);
-  }
-}
-
-/* Card Fokus Wilayah Banyuwangi dengan Animasi Mengambang Ke Atas Bawah */
-.hero-info-card {
-  position: absolute; left: -24px; bottom: 0; z-index: 3;
-  background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px;
-  padding: 16px 20px;
-  box-shadow: 0 14px 34px rgba(7, 34, 61, 0.08), 0 2px 8px rgba(7, 34, 61, 0.03);
-  max-width: 285px;
-  animation: floatBobbing 4s ease-in-out infinite;
   will-change: transform;
 }
 
@@ -1160,14 +1265,21 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 @media (max-width: 900px) {
   :root { --section-y: var(--s10); }
 
-  .hero { padding: var(--s5) 0 var(--s10); }
-  .hero-grid, .about-grid, .detail-grid, .region-grid, .contact-grid, .adv-grid,
+  .hero-panoramic-stage {
+    min-height: 540px;
+    padding-top: var(--s6);
+    padding-bottom: var(--s6);
+  }
+  .hero-stage-title {
+    font-size: clamp(1.5rem, 4vw, 2.125rem);
+  }
+  .hero-stage-desc {
+    font-size: 1rem;
+    margin-bottom: var(--s4);
+  }
+
+  .about-grid, .detail-grid, .region-grid, .contact-grid, .adv-grid,
   .section-head { grid-template-columns: 1fr; }
-  .hero-grid { gap: var(--s6); }
-  .hero-media { order: -1; padding: 24px 12px 20px 0; }
-  .hero-photo { aspect-ratio: 4 / 3; border-radius: 8px; }
-  .hero-info-card { left: 16px; bottom: 8px; max-width: 280px; }
-  .hero-dot-pattern { top: 0; right: 0; opacity: 0.6; }
 
   .section-head { gap: var(--s2); margin-bottom: var(--s5); }
   .section-head .head-action { justify-self: start; margin-top: var(--s1); }
@@ -1266,21 +1378,38 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   .page-hero { padding: var(--s6) 0 var(--s5); }
   .page-hero h1 { font-size: clamp(1.625rem, 7vw, 2rem); line-height: 1.2; max-width: 100%; }
 
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; }
-  .hero-media { padding: 20px 4px 0 0; }
-  .hero-photo { border-radius: 8px; }
-  .hero-dot-pattern { display: none; }
-  .hero-editorial-tag { font-size: 0.625rem; letter-spacing: 0.1em; top: -18px; }
-  .hero-image-wrap::before { top: -8px; right: -8px; bottom: 8px; left: 8px; }
-  .hero-info-card {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    margin-top: calc(var(--s3) * -1);
-    margin-left: var(--s2);
-    margin-right: var(--s2);
-    max-width: none;
+  .hero-panoramic-stage {
+    min-height: 520px;
+    padding-top: var(--s5);
+    padding-bottom: var(--s5);
+  }
+  .hero-stage-badge {
+    font-size: 0.75rem;
+    padding: 4px 12px;
+  }
+  .hero-stage-title {
+    font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+    line-height: 1.25;
+  }
+  .hero-stage-desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: var(--s4);
+  }
+  .hero-stage-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: var(--s2);
+  }
+  .hero-stage-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-stage-facts {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--s1);
+    font-size: 0.8125rem;
   }
 
   .svc-grid { gap: var(--s8) 0; }

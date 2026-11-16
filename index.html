@@ -52,40 +52,45 @@
 
   <main id="main">
 
-    <!-- SECTION 1 — HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="site-container hero-grid">
-        <div class="hero-content">
-          <h1 class="hero-title" id="hero-title">Perawatan Kesehatan Lebih Dekat, <span class="hl">Langsung di Rumah Anda.</span></h1>
-          <p class="hero-desc">CareWangi membantu masyarakat mendapatkan informasi layanan kunjungan dokter dan perawat ke rumah, khusus untuk wilayah Kabupaten Banyuwangi.</p>
-          <div class="hero-actions">
-            <a href="layanan.html" class="btn btn-primary btn-lg btn-jelajah">
-              <span class="btn-care-icon-wrap" aria-hidden="true">
-                <img src="assets/icons/care-walk.gif" alt="" class="btn-care-gif" width="34" height="34">
-              </span>
-              <span>Jelajahi Layanan</span>
-              <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
-            </a>
-            <a href="kontak.html" class="btn btn-outline btn-lg">Hubungi Kami</a>
-          </div>
-          <ul class="hero-facts">
-            <li>Kunjungan Dokter</li>
-            <li>Kunjungan Perawat</li>
-            <li>Kabupaten Banyuwangi</li>
-          </ul>
-        </div>
-        <div class="hero-media">
-          <div class="hero-dot-pattern" aria-hidden="true"></div>
-          <div class="hero-image-wrap">
-            <img src="assets/images/hero-homecare.jpg" alt="Tenaga kesehatan berbincang hangat dengan seorang pasien lanjut usia" class="hero-photo" width="1200" height="793" fetchpriority="high">
-          </div>
-          <div class="hero-info-card" id="heroInfoCard">
-            <div class="hero-info-badge">
-              <span class="pulse-dot"></span>
-              <span>Wilayah Khusus</span>
+    <!-- SECTION 1 — HERO PANORAMIC -->
+    <section class="hero-panoramic" aria-labelledby="hero-title">
+      <div class="hero-panoramic-stage">
+        <picture class="hero-panoramic-picture">
+          <source media="(max-width: 640px)" srcset="assets/images/hero-homecare-banner-mobile.webp" type="image/webp">
+          <source media="(max-width: 640px)" srcset="assets/images/hero-homecare-banner-mobile.jpg" type="image/jpeg">
+          <source srcset="assets/images/hero-homecare-banner.webp" type="image/webp">
+          <img src="assets/images/hero-homecare-banner.jpg" alt="Tim Tenaga Kesehatan Kunjungan Medis ke Rumah CareWangi" class="hero-panoramic-bg" width="2048" height="822" fetchpriority="high">
+        </picture>
+        <div class="hero-panoramic-overlay" aria-hidden="true"></div>
+        <div class="site-container hero-panoramic-container">
+          <div class="hero-panoramic-content">
+            <span class="hero-stage-badge">Layanan Medis ke Rumah Banyuwangi</span>
+            <h1 class="hero-stage-title" id="hero-title">Program Perawatan Medis di Rumah – Layanan Kunjungan Profesional</h1>
+            <p class="hero-stage-desc">CareWangi menghadirkan akses informasi layanan kunjungan dokter dan perawat terstruktur untuk kenyamanan serta perawatan kesehatan keluarga Anda di Kabupaten Banyuwangi.</p>
+            <div class="hero-stage-actions">
+              <a href="layanan.html" class="btn btn-primary btn-lg btn-jelajah">
+                <span class="btn-care-icon-wrap" aria-hidden="true">
+                  <img src="assets/icons/care-walk.gif" alt="" class="btn-care-gif" width="34" height="34">
+                </span>
+                <span>Jelajahi Layanan</span>
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/></svg>
+              </a>
+              <a href="kontak.html" class="btn btn-outline-white btn-lg">Hubungi Kami</a>
             </div>
-            <strong class="hero-info-title">Fokus Wilayah Banyuwangi</strong>
-            <p class="hero-info-desc">Platform informasi layanan kesehatan kunjungan ke rumah untuk masyarakat Kabupaten Banyuwangi, Jawa Timur.</p>
+            <ul class="hero-stage-facts">
+              <li>
+                <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                <span>Kunjungan Dokter</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                <span>Kunjungan Perawat</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor" aria-hidden="true"><path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/></svg>
+                <span>Fokus Kabupaten Banyuwangi</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
