@@ -526,10 +526,9 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 .hero-stage-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
+  padding: 6px 18px;
   background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 999px;
   color: #ffffff;
   font-size: 0.8125rem;
@@ -539,16 +538,6 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   margin-bottom: var(--s3);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-}
-
-.hero-stage-badge::before {
-  content: "";
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #60a5fa;
-  box-shadow: 0 0 8px #60a5fa;
 }
 
 .hero-stage-title {
@@ -629,7 +618,7 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 }
 
 .hero-stage-facts svg {
-  color: #60a5fa;
+  color: rgba(255, 255, 255, 0.9);
   flex-shrink: 0;
 }
 
@@ -687,26 +676,7 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 }
 
 .pulse-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #22C55E;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-  animation: pulseDot 2s infinite;
-}
-@keyframes pulseDot {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
-  }
-  100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
-  }
+  display: none;
 }
 
 .hero-info-title {
@@ -1009,7 +979,6 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 .cta-badge-live {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.22);
   color: #ffffff;
@@ -1021,14 +990,6 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   text-transform: uppercase;
   margin-bottom: 20px;
   backdrop-filter: blur(8px);
-}
-
-.live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #10B981;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
 }
 
 .cta-editorial-title {
@@ -3051,24 +3012,11 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(7, 34, 61, 0.16),
-              0 0 16px rgba(37, 211, 102, 0.4);
-  animation: waGlowPulse 3.2s ease-in-out infinite;
+  box-shadow: 0 4px 16px rgba(7, 34, 61, 0.22);
   transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
               background-color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
-}
-
-.floating-wa::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(37, 211, 102, 0.45) 0%, rgba(37, 211, 102, 0) 72%);
-  z-index: -1;
-  pointer-events: none;
-  animation: waAuraPulse 3.2s ease-in-out infinite;
 }
 
 .floating-wa svg {
@@ -3080,9 +3028,8 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 
 .floating-wa:hover {
   background-color: #20BA5A;
-  transform: translateY(-3px) scale(1.06);
-  box-shadow: 0 8px 24px rgba(7, 34, 61, 0.22),
-              0 0 30px rgba(37, 211, 102, 0.75);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(7, 34, 61, 0.28);
 }
 
 .floating-wa:hover svg {
@@ -3096,28 +3043,6 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 .floating-wa:focus-visible {
   outline: 3px solid var(--teal);
   outline-offset: 4px;
-}
-
-@keyframes waGlowPulse {
-  0%, 100% {
-    box-shadow: 0 4px 14px rgba(7, 34, 61, 0.16),
-                0 0 14px rgba(37, 211, 102, 0.4);
-  }
-  50% {
-    box-shadow: 0 6px 18px rgba(7, 34, 61, 0.20),
-                0 0 28px rgba(37, 211, 102, 0.7);
-  }
-}
-
-@keyframes waAuraPulse {
-  0%, 100% {
-    transform: scale(0.95);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 0.95;
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -3543,6 +3468,5 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
-  .floating-wa, .floating-wa::before { animation: none !important; }
   .scroll-to-top { transition: none !important; }
 }
