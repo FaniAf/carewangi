@@ -200,6 +200,14 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 .site-header.scrolled .brand-name { color: #ffffff; }
 .site-header.scrolled .brand-name span { color: var(--sage); }
 
+.nav-drawer-header,
+.nav-drawer-footer {
+  display: none;
+}
+.nav-link-icon {
+  display: none;
+}
+
 .nav-menu { display: flex; align-items: center; gap: var(--s4); }
 .nav-links { display: flex; align-items: center; gap: var(--s3); }
 
@@ -3217,75 +3225,218 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
 }
 
 @media (max-width: 820px) {
+  .site-header { z-index: 1000; }
   .menu-toggle { display: flex; }
 
+  /* OFF-CANVAS SIDEBAR DRAWER DARI SISI KIRI (SESUAI GAMBAR 2) */
   .nav-menu {
-    position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 99;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--bg); padding: var(--s1) var(--s3) var(--s4);
-    border-bottom: 1px solid var(--line); box-shadow: var(--shadow-soft);
-    transform: translateY(-8px); opacity: 0; visibility: hidden; pointer-events: none;
-    transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(320px, 84vw);
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1001;
+    background: #ffffff !important;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    box-shadow: 12px 0 36px rgba(7, 34, 61, 0.24);
+    border-right: 1px solid var(--line);
+    border-bottom: none;
+    transform: translateX(-105%);
+    opacity: 1;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
-  .nav-menu.open { transform: none; opacity: 1; visibility: visible; pointer-events: auto; }
 
-  /* Mobile menu tampilan gelap saat header biru di-scroll */
-  .site-header.scrolled .nav-menu {
-    background: var(--teal-dark);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  .nav-menu.open {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
   }
-  .site-header.scrolled .nav-menu .nav-link {
-    color: rgba(255, 255, 255, 0.88);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .site-header.scrolled .nav-menu .nav-link:hover,
-  .site-header.scrolled .nav-menu .nav-link.active {
-    color: #ffffff;
-  }
-  .site-header.scrolled .nav-menu .nav-cta .btn-primary {
+
+  /* DRAWER HEADER (Logo + Circular Close Button) */
+  .nav-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 16px;
+    border-bottom: 1px solid var(--line);
     background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .drawer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .drawer-brand .brand-name {
+    font-size: 1.1875rem;
+    font-weight: 700;
+    color: var(--teal-deep) !important;
+  }
+  .drawer-brand .brand-name span {
+    color: var(--teal) !important;
+  }
+
+  .drawer-close {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: #ffffff;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .drawer-close:hover {
+    background: var(--sage-50);
+    border-color: var(--teal);
     color: var(--teal);
-    border-color: #ffffff;
+    transform: rotate(90deg);
   }
 
+  /* BACKDROP GELAP DI SISI KANAN */
   .nav-backdrop {
-    display: block; position: fixed; inset: var(--nav-h) 0 0 0; z-index: 98;
-    background: rgba(7, 34, 61, 0.45); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity var(--ease);
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    background: rgba(7, 34, 61, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
   }
-  .nav-backdrop.open { opacity: 1; visibility: visible; pointer-events: auto; }
+  .nav-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
 
-  .nav-links { flex-direction: column; align-items: stretch; gap: 0; }
-  .nav-link { display: block; padding: var(--s2) 0; border-bottom: 1px solid var(--line); font-size: 1rem; }
+  /* LIST NAV-LINKS DI DALAM DRAWER */
+  .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 18px 16px;
+    flex: 1 0 auto;
+    background: #ffffff;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid transparent;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink) !important;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    background: var(--sage-50);
+    color: var(--teal) !important;
+  }
+
+  .nav-link.active {
+    background: var(--sage-50);
+    border-color: var(--sage);
+    color: var(--teal) !important;
+    font-weight: 600;
+  }
   .nav-link.active::after { display: none; }
 
-  /* Mobile Dropdown Styling */
-  .nav-item-dropdown { width: 100%; }
+  .nav-link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    color: var(--ink-muted);
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+  }
+
+  .nav-link:hover .nav-link-icon,
+  .nav-link.active .nav-link-icon {
+    color: var(--teal);
+  }
+
+  .nav-link-text {
+    flex: 1;
+    text-align: left;
+  }
+
+  /* ACCORDION DROPDOWN LAYANAN (SEPERTI GAMBAR 2) */
+  .nav-item-dropdown {
+    width: 100%;
+  }
+
   .nav-dropdown-btn {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
     align-items: center;
-    padding: var(--s2) 0;
-    border-bottom: 1px solid var(--line);
-    font-size: 1rem;
-    color: var(--ink);
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid var(--line) !important;
+    border-radius: 12px;
+    padding: 12px 16px;
+    background: #ffffff !important;
+    color: var(--ink) !important;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
   }
   .nav-dropdown-btn.active::after { display: none; }
-  .site-header.scrolled .nav-menu .nav-dropdown-btn {
-    color: rgba(255, 255, 255, 0.88);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  .nav-item-dropdown.is-open .nav-dropdown-btn {
+    background: var(--sage-50) !important;
+    border-color: var(--sage) !important;
+    color: var(--teal) !important;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
   }
-  .site-header.scrolled .nav-menu .nav-dropdown-btn:hover,
-  .site-header.scrolled .nav-menu .nav-dropdown-btn.active {
-    color: #ffffff;
+
+  .nav-dropdown-btn .dropdown-chevron {
+    transition: transform 0.25s ease;
+    color: var(--ink-muted);
   }
+  .nav-item-dropdown.is-open .nav-dropdown-btn .dropdown-chevron {
+    transform: rotate(180deg);
+    color: var(--teal);
+  }
+
   .nav-dropdown-menu {
     position: static;
     transform: none;
     width: 100%;
     box-shadow: none;
     border: 1px solid var(--line);
-    border-radius: 12px;
+    border-top: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
     background: #f8fafd;
     padding: 0 14px;
     margin: 0;
@@ -3293,64 +3444,54 @@ h4 { font-size: 1rem; line-height: 1.4; letter-spacing: -0.01em; }
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
-    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease, margin 0.25s ease;
+    transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.25s ease;
   }
   .nav-item-dropdown.is-open .nav-dropdown-menu {
     max-height: 800px;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    padding: 12px 14px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    padding: 12px 14px 16px;
   }
-  .site-header.scrolled .nav-dropdown-menu {
-    background: rgba(7, 34, 61, 0.4);
-    border-color: rgba(255, 255, 255, 0.12);
-  }
-  .site-header.scrolled .dropdown-header {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-  .site-header.scrolled .dropdown-kicker {
-    color: #93c5fd;
-  }
-  .site-header.scrolled .dropdown-view-all {
-    color: #ffffff;
-  }
-  .site-header.scrolled .dropdown-col-title {
-    color: #ffffff;
-  }
-  .site-header.scrolled .dropdown-col-title svg {
-    color: #60a5fa;
-  }
-  .site-header.scrolled .dropdown-item-title {
-    color: #ffffff;
-  }
-  .site-header.scrolled .dropdown-item-arrow {
-    color: #93c5fd;
-    opacity: 0.8;
-  }
-  .site-header.scrolled .dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.08);
-  }
-  .site-header.scrolled .dropdown-footer {
-    border-top-color: rgba(255, 255, 255, 0.1);
-  }
-  .site-header.scrolled .dropdown-footer-text {
-    color: rgba(255, 255, 255, 0.7);
-  }
-  .site-header.scrolled .dropdown-footer-text strong {
-    color: #ffffff;
-  }
-  .site-header.scrolled .dropdown-footer-link {
-    color: #93c5fd;
-  }
+
   .dropdown-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  .nav-cta { margin-top: var(--s3); }
-  .nav-cta .btn { width: 100%; }
+
+  /* DRAWER FOOTER */
+  .nav-drawer-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 16px 20px 24px;
+    border-top: 1px solid var(--line);
+    background: #ffffff;
+    margin-top: auto;
+  }
+
+  .btn-drawer-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: var(--r-full);
+  }
+
+  .drawer-locale-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--ink-muted);
+    justify-content: center;
+  }
+
+  /* Sembunyikan CTA Navbar Desktop di dalam Drawer */
+  .nav-cta {
+    display: none !important;
+  }
 }
 
 @media (max-width: 560px) {

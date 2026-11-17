@@ -101,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (burger) burger.addEventListener('click', () => setMobileMenu());
   if (backdrop) backdrop.addEventListener('click', () => setMobileMenu(false));
+  const drawerClose = document.getElementById('drawerClose');
+  if (drawerClose) drawerClose.addEventListener('click', () => setMobileMenu(false));
 
   navLinks.forEach((link) => {
     link.addEventListener('click', () => {
