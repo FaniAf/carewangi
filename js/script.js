@@ -233,8 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getScrollStep = () => {
       const card = articlesTrack.querySelector('.article-card');
-      const cardWidth = card ? card.offsetWidth : 350;
-      const gap = 24;
+      const cardWidth = card ? card.offsetWidth : 280;
+      const gap = parseFloat(getComputedStyle(articlesTrack).gap) || 20;
       return cardWidth + gap;
     };
 
@@ -298,8 +298,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getTestiScrollStep = () => {
       const card = testiTrack.querySelector('.testi-card');
-      const cardWidth = card ? card.offsetWidth : 380;
-      const gap = 24;
+      const cardWidth = card ? card.offsetWidth : 280;
+      const gap = parseFloat(getComputedStyle(testiTrack).gap) || 20;
       return cardWidth + gap;
     };
 
